@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body style="margin:0 auto ;">
+    <div class="banner">
+        <img class="banner-image" src="~/Images/banner.png" alt="banner" height="150" />
+    </div>
+
+    <div class="banner">
+        <img src="~/Images/regionalmap.png" alt="regionalmap" usemap="#map" height="450" />
+        
+        <map name="map">
+            <area shape="rect" coords="70,50,200,150"	alt="Northern America"   href="" target="_blank">
+            <area shape="rect" coords="180,160,270,205" alt="Caribbean"			 href="" target="_blank">
+            <area shape="rect" coords="70,180,140,210"	alt="Central America"    href="" target="_blank">
+            <area shape="rect" coords="170,215,295,380" alt="South America"      href="" target="_blank">
+            <area shape="rect" coords="360,30,470,70"	alt="Northern Europe"    href="" target="_blank">
+            <area shape="rect" coords="480,50,580,90"	alt="Eastern Europe"     href="" target="_blank">
+            <area shape="rect" coords="330,90,450,110"  alt="Western Europe"     href="" target="_blank">
+            <area shape="rect" coords="320,115,470,150" alt="Southern Europe"    href="" target="_blank">
+            <area shape="rect" coords="400,160,490,190" alt="Northern Africa"    href="" target="_blank">
+            <area shape="rect" coords="350,190,440,235" alt="Western Africa"     href="" target="_blank">
+            <area shape="rect" coords="430,240,480,280" alt="Middle Africa"      href="" target="_blank">
+            <area shape="rect" coords="490,250,580,290" alt="Eastern Africa"     href="" target="_blank">
+            <area shape="rect" coords="430,365,495,320" alt="Southern Africa"    href="" target="_blank">
+            <area shape="rect" coords="545,138,620,90"  alt="Central Asia"       href="" target="_blank">
+            <area shape="rect" coords="470,158,530,120" alt="Western Asia"       href="" target="_blank">
+            <area shape="rect" coords="640,166,740,100" alt="Eastern Asia"       href="" target="_blank">
+            <area shape="rect" coords="550,150,640,185" alt="Southern Asia"      href="" target="_blank">
+            <area shape="rect" coords="680,260,800,200" alt="South Eastern Asia" href="" target="_blank">
+            <area shape="rect" coords="728,400,850,300" alt="Australia"          href="" target="_blank">
+        </map>
+    </div>
+</body>

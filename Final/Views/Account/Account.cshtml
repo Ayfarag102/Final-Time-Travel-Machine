@@ -1,0 +1,20 @@
+﻿@using Final.Models
+@model Account
+
+@{
+	ViewBag.Title = "Account";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Account</h2>
+
+<p>Current Email: @User.Identity.Name</p>
+
+<ul style = "list-style-type:square">
+					<li>@Html.ActionLink("Change Password", "ChangePassword", "Account")</li>
+
+					<li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+
+</ul>
+						
+					
