@@ -19,3 +19,8 @@ Extra Functionalities:
 - Password Encryption (Hash Password Using MD5).
 - Displaying Proper Error Messages.
 
+Demo Video:
+----------------
+
+https://youtu.be/VZjwArCB704
+
