@@ -14,7 +14,7 @@ Main Functionalities:
 
 Extra Functionalities:
 -------
-- Sessions (20 minutes limitation when not in progress).
+- Sessions (20 minutes limitation is set for user when not in progress).
 - Doesn't Allow Multiple Account Sign Ups.
 - Password Encryption (Hash Password Using MD5).
 - Displaying Proper Error Messages.
