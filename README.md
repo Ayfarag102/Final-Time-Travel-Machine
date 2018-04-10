@@ -1,4 +1,11 @@
-# Final-Time-Travel-Machine
+# Final Time Travel Machine
+
+PRJ666 - Group 09
+-----------------
+
+(A Group Project creating an Open-Source Web Application for educational purposes; Easy accessibility for students to search authentic historical facts, public contribution to application)
+
+----------------------
 
 Account Registration and Login System:
 
@@ -23,4 +30,3 @@ Demo Video:
 ----------------
 
 https://youtu.be/VZjwArCB704
-
