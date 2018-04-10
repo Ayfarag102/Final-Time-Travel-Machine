@@ -9,7 +9,7 @@ Main Functionalities:
 - User Registration. 
   - Email Confirmation (With Tokens).
 - Forgot Password.
-  - User recieves a one-time temporary login password for security purposes.
+  - User receives a one-time temporary login password for security purposes.
 - Change Password.
 
 Extra Functionalities:
