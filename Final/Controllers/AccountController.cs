@@ -38,7 +38,7 @@ namespace Final.Controllers
             //string email = "astrobladez.crusher@gmail.com";
 
 
-            //int id = GetIdByEmail();
+            //int id = GetIdBySession();
 
             //ViewBag.Message1 = "<strong> User ID for " + Session["CurrentUser"] + " = " + id + "</strong>";
 
@@ -101,7 +101,7 @@ namespace Final.Controllers
 
 
         [Authorize]
-        public int GetIdByEmail()
+        public int GetIdBySession()
         {
 
             int userID = 0;
