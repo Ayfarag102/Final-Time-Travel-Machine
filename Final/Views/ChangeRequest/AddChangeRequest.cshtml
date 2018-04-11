@@ -1,0 +1,50 @@
+﻿﻿
+@{
+    ViewBag.Title = "AddChangeRequest";
+}
+
+<h2>AddChangeRequest</h2>
+
+@using (Html.BeginForm("AddOneChangeRequest", "ChangeRequest", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>
+        @Html.Label("Region");
+        @Html.DropDownList("ddlregionforCR", (IEnumerable<SelectListItem>)ViewBag.ddlregions);
+    </p>
+    <p>
+        @Html.Label("Category");
+        @Html.DropDownList("ddlcategoryforCR", (IEnumerable<SelectListItem>)ViewBag.ddlcategorys);
+    </p>
+    <p>
+        @Html.Label("Name of the Content");
+        <input type="text" name="contentname" id="contentname">
+    </p>
+    <p>
+        @Html.Label("Year");
+        <input type="text" name="year" id="year">
+    </p>
+    <p>
+        @Html.Label("Explain your expectation");
+        <textarea name="reason" id="reason"></textarea>
+    </p>
+    <p>
+        @Html.Label("Basic Introduction");
+        <textarea name="detail" id="detail"></textarea>
+    </p>
+    <p>
+        @Html.Label("Add a link to get more information?");
+        <input type="text" name="wiki" id="wiki">
+    </p>
+    <p>
+        @Html.Label("Add a video link to get more information?");
+        <input type="text" name="video" id="video">
+    </p>
+    <p>
+        @Html.Label("What to add a picture?");
+        <input type="file" name="picfile" id="picfile">
+    </p>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+
+}

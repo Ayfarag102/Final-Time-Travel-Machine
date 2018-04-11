@@ -1,0 +1,82 @@
+﻿﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Category Index</h2>
+<p>
+    You have already selected Region <span>@ViewBag.S_regionName<</span>
+
+    Select a category to approach your target ...
+</p>
+
+
+<table>
+    <tr>
+        <th>
+            Warefare
+        </th>
+        <th>
+            Event
+        </th>
+        <th>
+            Regime
+        </th>
+        <th>
+            Celebrity
+        </th>
+        <th>
+            Others
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <input type="image" src="Image/Warfare.jpg" alt="warfare" width="300" height="200" id="warfare">
+        </td>
+        <td><input type="image" src="" alt="Event" width="300" height="200" id="hisevent"></td>
+        <td><input type="image" src="Image/Regime.jpg" alt="Regime" width="300" height="200" id="regime"></td>
+        <td><input type="image" src="" alt="Celebrity" width="300" height="200" id="celebrity"></td>
+        <td><input type="image" src="" alt="Others" width="300" height="200" id="others"></td>
+    </tr>
+
+</table>
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#warfare").click(function() {
+            var url = '@Url.Action("Index", "HisContent", new { @regionId = ViewBag.S_regionId})';
+            url = url + '&categoryId=1';
+            window.location.href = url;
+        });
+
+        $("#hisevent").click(function(){
+
+            var url = '@Url.Action("Index", "HisContent", new { @regionId = ViewBag.S_regionId })';
+            url = url + '&categoryId=2';
+            window.location.href = url;
+        });
+
+        $("#regime").click(function(){
+
+            var url = '@Url.Action("Index", "HisContent", new { @regionId = ViewBag.S_regionId })';
+            url = url + '&categoryId=3';
+            window.location.href = url;
+        });
+
+        $("#celebrity").click(function(){
+
+            var url = '@Url.Action("Index", "HisContent", new { @regionId = ViewBag.S_regionId })';
+            url = url + '&categoryId=4';
+            window.location.href = url;
+        });
+
+        $("#others").click(function(){
+
+            var url = '@Url.Action("Index", "HisContent", new { @regionId = ViewBag.S_regionId })';
+            url = url + '&categoryId=5';
+            window.location.href = url;
+        });
+
+    });
+</script>
+
+

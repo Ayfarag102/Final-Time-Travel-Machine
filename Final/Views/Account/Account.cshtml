@@ -6,7 +6,7 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Account</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>Current Email: @User.Identity.Name</p>
 
@@ -16,5 +16,12 @@
 					<li>@Html.ActionLink("Logout", "Logout", "Account")</li>
 
 </ul>
+
+
+
+
+
+@Html.Raw(@ViewBag.Message1)
+@Html.Raw(@ViewBag.Message2)
 						
 					

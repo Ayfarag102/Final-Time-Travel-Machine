@@ -1,0 +1,171 @@
+﻿﻿@model Time_Travel_Machine.Models.Change_Request
+
+@{
+    ViewBag.Title = "crDetails";
+}
+
+<h2>@*crDetails*@</h2>
+
+<div>
+    <h4>Change_Request Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Change_Request_Id)
+        </dt>
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Change_Request_Id)
+        </dd>
+        <dt>
+            Picture
+        </dt>
+        <dd>
+            @if (Model.picname != string.Empty)
+            {
+                <img src="../UploadPicture/@Model.picname" alt="@Model.Content_Name" width="120" height="120">
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Region_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.regionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.regionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lastupdatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lastupdatetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.picture_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.picture_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wiki_key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wiki_key)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.video_key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.video_key)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.request_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.request_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.active)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index", "ChangeRequest")
+</p>

@@ -1,0 +1,87 @@
+﻿﻿@model IEnumerable<Time_Travel_Machine.Models.ContentIndex>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Picture
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.regionName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.categoryName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Content_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.year)
+        </th>
+
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.detail)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (item.picname != string.Empty)
+                {
+
+                    <img src="UploadPicture/@item.picname" alt="@item.Content_Name" width="45" height="45">
+                }
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.regionName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.categoryName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Content_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.usename)
+            </td>
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.detail)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+

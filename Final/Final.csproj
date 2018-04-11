@@ -199,6 +199,10 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="UploadPicture\20160731012203_1.jpg" />
+    <Content Include="UploadPicture\20161215150017_1.jpg" />
+    <Content Include="UploadPicture\download.png" />
+    <Content Include="UploadPicture\wows1year.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -222,9 +226,17 @@
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Account\Account.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\ChangeRequest\AddChangeRequest.cshtml" />
+    <Content Include="Views\ChangeRequest\crDetails.cshtml" />
+    <Content Include="Views\ChangeRequest\crFilterIndex.cshtml" />
+    <Content Include="Views\ChangeRequest\crIndex.cshtml" />
+    <Content Include="Views\Content\cIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Manager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

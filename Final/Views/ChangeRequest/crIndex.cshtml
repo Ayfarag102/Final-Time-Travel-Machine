@@ -1,0 +1,152 @@
+﻿﻿@model IEnumerable<Time_Travel_Machine.Models.Change_Request_Index>
+@{
+    ViewBag.Title = "crIndex";
+}
+<head>
+
+
+</head>
+<h2>crIndex</h2>
+
+<p>
+    @Html.ActionLink("What to make a change", "AddOneCR", "ChangeRequest")
+</p>
+<div style="margin-bottom:2%;">
+    @using (Html.BeginForm("FilterIndex", "ChangeRequest"))
+    {
+        <fieldset>
+            <legend>Filter:</legend>
+            <table>
+                <tr>
+                    <td>
+                        <p>
+                            @Html.Label("Region")
+                            @Html.DropDownList("ddlregion", (IEnumerable<SelectListItem>)ViewBag.ddlregions);
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            @Html.Label("Category")
+                            @Html.DropDownList("ddlcategory", (IEnumerable<SelectListItem>)ViewBag.ddlcategorys);
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            @Html.Label("Year")
+                            @Html.DropDownList("ddlyear", (IEnumerable<SelectListItem>)ViewBag.ddlyears);
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Filter" style="float:right">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            Picture
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Change_Request_Id)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.regionName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.categoryName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Content_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.year)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.usename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastupdatetime)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (item.picname != string.Empty)
+                {
+
+                    <img src="UploadPicture/@item.picname" alt="@item.Content_Name" width="45" height="45">
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Change_Request_Id)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.regionName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.categoryName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Content_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.usename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastupdatetime)
+            </td>
+
+            <td>
+                @Html.ActionLink("Promote", "Promote", "ChangeRequest", new { crid = item.Change_Request_Id, userid = 1 }, new { id = "GoPromote" }) |
+                @Html.ActionLink("See more", "Details", "ChangeRequest", new { crid = item.Change_Request_Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+           /* $(function () {
+                $("#btnGet").click(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/ChangeRequest/Promote",
+                        data: 'crid: "' + $("#Change_Request_Id") + '", userid: "' + "currentuser" + '"',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data == 100) {
+                                alert("Already promote the request once!");
+                            } else {
+                                alert("Promte Success");
+                            }
+                        }
+                    });
+
+                });
+
+            });*/
+</script>
+

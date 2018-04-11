@@ -15,6 +15,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.SessionState;
 
+
 namespace Final.Controllers
 {
     public class AccountController : Controller
@@ -28,12 +29,139 @@ namespace Final.Controllers
 
         }
 
+        //GET: /Account/Account
+
         [Authorize]
         public ActionResult Account()
 
         {
+            //string email = "astrobladez.crusher@gmail.com";
+
+
+            //int id = GetIdByEmail();
+
+            //ViewBag.Message1 = "<strong> User ID for " + Session["CurrentUser"] + " = " + id + "</strong>";
+
+
+            //int _id = GetIdByEmail(email);
+
+            //ViewBag.Message2 = "<strong> User ID for " + email + " = " + _id + "</strong>";
+
             return View();
         }
+
+
+
+        [Authorize]
+        public int GetIdByEmail(string email)
+        {
+
+            int userID = 0;
+
+
+            using (MySqlConnection connection = new MySqlConnection(mysqlconnection))
+            {
+                try
+                {
+
+                    MySqlCommand getID = new MySqlCommand();
+
+
+                    // connect to database
+                    connection.Open();
+
+                    // check if user is logged in and currently in session
+
+                        getID = new MySqlCommand("SELECT USER_ID FROM USER WHERE EMAIL = @Email", connection);
+                        getID.Parameters.AddWithValue("@Email", email.ToString());
+
+
+
+                        userID = (int)getID.ExecuteScalar();
+
+                        return userID;
+
+
+                }
+
+                catch (Exception ex)
+                {
+
+                }
+                finally
+                {
+                    // close the connection
+                    connection.Close();
+
+                }
+
+            }
+
+            return userID;
+
+        }
+
+
+        [Authorize]
+        public int GetIdByEmail()
+        {
+
+            int userID = 0;
+
+
+            using (MySqlConnection connection = new MySqlConnection(mysqlconnection))
+            {
+                try
+                {
+
+                    MySqlCommand getID = new MySqlCommand();
+
+
+                    // connect to database
+                    connection.Open();
+
+                    // check if user is logged in and currently in session
+
+                    if(Session["CurrentUser"] != null)
+                    { 
+
+                        getID = new MySqlCommand("SELECT USER_ID FROM USER WHERE EMAIL = @Email", connection);
+                        getID.Parameters.AddWithValue("@Email", Session["CurrentUser"].ToString());
+
+
+
+                        userID = (int)getID.ExecuteScalar();
+
+                        return userID;
+
+
+                    }
+
+                    else
+                    {
+                        return -1;
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+
+                }
+                finally
+                {
+                    // close the connection
+                    connection.Close();
+
+                }
+
+            }
+
+            return userID;
+
+
+        }
+
         // GET: /Account/Login
 
         [AllowAnonymous]
@@ -99,8 +227,14 @@ namespace Final.Controllers
 
                             // login user
 
+                           // string userEmail = model.UserEmail.ToString();
+
                             FormsAuthentication.SetAuthCookie(model.UserEmail, true);
 
+                            Session["CurrentUser"] = model.UserEmail.ToString();
+
+
+                         //   Session["CurrentUser"] = model.UserEmail.ToString();
                             // Redirect to homepage - user has logged in successfully
                             return this.RedirectToAction("Index", "Home");
 
@@ -140,6 +274,8 @@ namespace Final.Controllers
 
         }
 
+
+        //GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -155,10 +291,6 @@ namespace Final.Controllers
             /*http://localhost:52289/Properties/ */
             if (!ModelState.IsValid)
             {
-                //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
                 return View();
             }
             else
@@ -241,7 +373,7 @@ namespace Final.Controllers
                                 Port = 587,
                                 UseDefaultCredentials = false,
                                 Credentials = new System.Net.NetworkCredential
-                            ("astrobladez.crusher@gmail.com", "014EGY2540PT205"),// Enter senders User name and password
+                            ("astrobladez.crusher@gmail.com", "Sub7anAllahWal7amdulillah1@"),// Enter senders User name and password
                                 EnableSsl = true
                             };
                             smtp.Send(mail);
@@ -275,17 +407,19 @@ namespace Final.Controllers
             }
 
         }
-        // If we got this far, something failed, redisplay form
+        
 
 
         [Authorize]
         public ActionResult Logout()
 
         {
+            Session["CurrentUser"] = null;
             FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
         }
+
 
 
         [HttpGet]
@@ -366,7 +500,9 @@ namespace Final.Controllers
         }
 
 
+        //GET: /Account/ForgotPassword
         [AllowAnonymous]
+        //User Can Reset Password by Using a One-Time Temporary Login Password
         public ActionResult ForgotPassword()
         {
             return View();
@@ -449,7 +585,7 @@ namespace Final.Controllers
                                 Port = 587,
                                 UseDefaultCredentials = false,
                                 Credentials = new System.Net.NetworkCredential
-                            ("astrobladez.crusher@gmail.com", "014EGY2540PT205"),// Enter senders User name and password
+                            ("astrobladez.crusher@gmail.com", "Sub7anAllahWal7amdulillah1@"),// Enter senders User name and password
                                 EnableSsl = true
                             };
                             smtp.Send(mail);
@@ -482,6 +618,7 @@ namespace Final.Controllers
 
 
 
+        //Generates Random Passwords for Temporary Login Password
         public string GenerateRandomPassword()
         {
             string allowedChars = string.Empty;
@@ -515,7 +652,7 @@ namespace Final.Controllers
             return passwordString;
         }
 
-
+        //GET: /Account/ChangePassword
         [Authorize]
         //User Can Change Password when Logged In
         public ActionResult ChangePassword()

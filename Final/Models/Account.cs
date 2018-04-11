@@ -12,6 +12,8 @@ namespace Final.Models
     [Table("user")]
     public class Account
     {
+        [Display(Name = "User ID")]
+        public int UserId { get; set; }
 
         [Required]
         [Display(Name = "Name")]
