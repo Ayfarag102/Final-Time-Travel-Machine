@@ -70,8 +70,6 @@ namespace Final.Controllers
                     // connect to database
                     connection.Open();
 
-                    // check if user is logged in and currently in session
-
                         getID = new MySqlCommand("SELECT USER_ID FROM USER WHERE EMAIL = @Email", connection);
                         getID.Parameters.AddWithValue("@Email", email.ToString());
 
