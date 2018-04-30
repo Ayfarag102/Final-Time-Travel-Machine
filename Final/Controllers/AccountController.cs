@@ -371,7 +371,7 @@ namespace Final.Controllers
                                 Port = 587,
                                 UseDefaultCredentials = false,
                                 Credentials = new System.Net.NetworkCredential
-                            ("astrobladez.crusher@gmail.com", "Sub7anAllahWal7amdulillah1@"),// Enter senders User name and password
+                            ("astrobladez.crusher@gmail.com", "****************************"),// Enter senders User name and password
                                 EnableSsl = true
                             };
                             smtp.Send(mail);
@@ -583,7 +583,7 @@ namespace Final.Controllers
                                 Port = 587,
                                 UseDefaultCredentials = false,
                                 Credentials = new System.Net.NetworkCredential
-                            ("astrobladez.crusher@gmail.com", "Sub7anAllahWal7amdulillah1@"),// Enter senders User name and password
+                            ("astrobladez.crusher@gmail.com", "**************************"),// Enter senders User name and password
                                 EnableSsl = true
                             };
                             smtp.Send(mail);
