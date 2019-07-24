@@ -7,9 +7,9 @@ PRJ666 - Group 09
 
 ----------------------
 
-Account Registration and Login System:
+###### Account Registration and Login System:
 
-Main Functionalities:
+:white_check_mark: Main Functionalities:
 ----------------------
 - User Login.
   - Cookies. 
@@ -19,14 +19,14 @@ Main Functionalities:
   - User receives a one-time temporary login password for security purposes.
 - Change Password.
 
-Extra Functionalities:
+:white_check_mark: Extra Functionalities:
 -------
 - Sessions (20 minutes limitation is set for user when not in progress).
 - Doesn't Allow Multiple Account Sign Ups.
 - Password Encryption (Hash Password Using MD5).
 - Displaying Proper Error Messages.
 
-Demo Video:
+:white_check_mark: Demo Video:
 ----------------
 
-https://youtu.be/VZjwArCB704
+https://youtu.be/tw3THW3I3Tk
