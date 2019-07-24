@@ -7,7 +7,7 @@ PRJ666 - Group 09
 
 ----------------------
 
-###### Account Registration and Login System:
+#### Account Registration and Login System:
 
 :white_check_mark: Main Functionalities:
 ----------------------
